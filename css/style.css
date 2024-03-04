@@ -1,1 +1,98 @@
 @import url(variables.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: var(--color-primary);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    grid-gap: 8px;
+    grid-template-areas: 
+        "menu menu menu menu menu menu menu menu menu menu menu menu"
+        "notification notification notification notification sales sales sales sales sales sales balances balances"
+        "notification notification notification notification sales sales sales sales sales sales balances balances"
+        "week week week week sales sales sales sales sales sales balances balances"
+        "week week week week sales sales sales sales sales sales devs devs" 
+        "week week week week sales sales sales sales sales sales devs devs"
+        "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+        "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+        "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+        ;
+    width: 800px;
+    height: 600px;
+    margin: 15px auto;
+    background: var(--color-primary);
+    /* border: 1px solid var(--color-primary); */
+    /* border-radius: 5px; */
+    /* box-shadow: var(--color-shadows); */
+}
+.container div{
+    background: var(--color-secundary);
+    border-radius: 5px;
+}
+.item-1{
+    background: red; 
+    grid-area: menu;
+}
+
+.item-2{
+    background: blue; 
+    grid-area: notification;
+}
+
+.item-3{
+    background: orange;
+    grid-area: sales;
+}
+
+.item-4{
+    background: violet;
+    grid-area: balances;
+}
+
+.item-5{
+    background: sandybrown;
+    grid-area: week;
+}
+
+.item-6{
+    background: darkcyan ;
+    grid-area: devs;
+}
+.item-7{
+    background: hotpink ;
+    grid-area: product;
+}
+.item-8{
+    background: yellow;
+    grid-area: timeline;
+}
+
+@media(width < 800px){
+    .container{
+        width: 100%;
+        margin: 0;
+        padding: 2px 10px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas:
+        "menu"
+        "sales"
+        "balance"
+        "week"
+        "devs"
+        "product"
+        "notificacion"
+        "timeline";
+}
+}
+.container div{
+    border-radius: 0px;
+}
